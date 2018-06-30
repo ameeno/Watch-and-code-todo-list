@@ -2,7 +2,7 @@
 
 // as a object:
 
-var myTodoList = {
+var TodoList = {
     todos: [],
 
     // it should have a function to shows todos
@@ -73,7 +73,7 @@ var myTodoList = {
 var displayTodosButton = document.getElementById('displayTodosButton');
 // Number 1, get access to display todos,
 // run display todos method when clicked.
-displayTodosButton.addEventListener('click', function() { myTodoList.displayTodos(); });
+displayTodosButton.addEventListener('click', function() { TodoList.displayTodos(); });
 
 var toggleAllButton = document.getElementById('toggleAllButton');
-toggleAllButton.addEventListener('click', function() { myTodoList.toggleAll(); });
+toggleAllButton.addEventListener('click', function() { TodoList.toggleAll(); });
