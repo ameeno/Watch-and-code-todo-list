@@ -1,7 +1,3 @@
-// Code goes here
-
-// as a object:
-
 var TodoList = {
     todos: [],
 
@@ -23,6 +19,7 @@ var TodoList = {
 
     // it should have a function to add todos
     addTodo: function(todoText) {
+      debugger;
         this.todos.push({
             todoText: todoText,
             completed: false
@@ -51,13 +48,13 @@ var TodoList = {
         for (var i = 0; i < this.todos.length; i++) {
             // if everything is true make all false;
             if (this.todos[i].completed) {
-                completed++;
+                completed++; // Increment all completed into counter var
             }
-            if (completed === all) {
+            if (completed === all) { // if ALL are completed we make them all false
                 for (var j = 0; j < this.todos.length; j++) {
                     this.todos[j].completed = false;
                 }
-            } else {
+            } else { // otherwise, make all false items true: we end up with completed to be true.
                 for (var j = 0; j < this.todos.length; j++) {
                     if (this.todos[j].completed == false) {
                         this.todos[j].completed = true;
@@ -70,10 +67,15 @@ var TodoList = {
     }
 };
 
-var displayTodosButton = document.getElementById('displayTodosButton');
-// Number 1, get access to display todos,
-// run display todos method when clicked.
-displayTodosButton.addEventListener('click', function() { TodoList.displayTodos(); });
+// Number 1, get access to buttons:
+//var displayTodosButton = document.getElementById('displayTodosButton');
+//var toggleAllButton = document.getElementById('toggleAllButton');
 
-var toggleAllButton = document.getElementById('toggleAllButton');
-toggleAllButton.addEventListener('click', function() { TodoList.toggleAll(); });
+// run methods on click:
+//displayTodosButton.addEventListener('click', function() { TodoList.displayTodos(); });
+//toggleAllButton.addEventListener('click', function() { TodoList.toggleAll(); });
+
+var handler = {
+  displayTodos: function() { TodoList.displayTodos(); },
+  toggleAll: function() { TodoList.toggleAll(); }
+  };
